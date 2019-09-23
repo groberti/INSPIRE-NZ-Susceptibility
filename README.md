@@ -7,7 +7,7 @@ The concept of susceptibility is mentioned in the INSPIRE data specifications fo
 This Extension is based off the [Natural Risk Zones Core Schema ](https://inspire.ec.europa.eu/schemas/nz-core/4.0/). Two Feature Types 
 
 ## Usage
-
+This schema extension can be used with ETL tools to align hazard susceptibily maps and database.
 
 ## Acknowledgments
 This schema extension has been developed by Minerva Intelligence as a part of the INSPIRE Helsinki 2019 Data Challenge. 
