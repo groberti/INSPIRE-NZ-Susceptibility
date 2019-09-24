@@ -6,7 +6,7 @@ Susceptibility is the spatial probability of natural hazard occurence.
 The concept of susceptibility is mentioned in the INSPIRE data specifications for Natural Risk Zones, yet the concept is not implemented as a feature type. 
 This Extension is based off the [Natural Risk Zones Core Schema ](https://inspire.ec.europa.eu/schemas/nz-core/4.0/). Two Feature Types have been added to the Core schema, [Abstract Susceptibility Area](http://minerva.codes/featureconcept/AbstractSusceptibilityArea) and [Susceptibility Area](minerva.codes/featureconcept/SusceptibilityArea).
 
-##Data structure
+## Data structure
 The Susceptibility area feature type schema structure is modeled based on other feature types in the Natural Risk Zone core schema. Susceptibility Area is in fact very similair to hazard area in structure. Susceptibility Area has the element "Influencing Factor" this element differentiates it from Hazard Area. "Influencing Factor" is defined as *Known conditions of the area which influence the hazard susceptibility of the area.* it is unbounded in multiplicity and can be defined Qualitatively or Quantitatively. Whether defined Quantitatively or Qualitatively the element can also define a DataSet Type attribute. Influencing factor allows susceptibility area datsets to be self explanatory. When a Susceptibility Area feature is defined with a certain likelihood of occurence it is beneficial for the end user of the data to understand what known conditions of that feature resulted in the calculation of that likelihood. 
 
 ## Usage
