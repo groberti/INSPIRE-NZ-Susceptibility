@@ -11,7 +11,7 @@
   <element abstract="true" name="AbstractSusceptibilityArea" substitutionGroup="gml:AbstractFeature" type="nz-susceptibility:AbstractSusceptibilityAreaType">
       <annotation>
         <documentation>-- Definition --
-  An area susceptible to a sepecific natural hazard.
+  An area susceptible to a specific natural hazard.
   
   -- Description --
   A natural hazard is a natural process or phenomenon that may cause loss of life, injury or other impacts, property damage, loss livelihoods and services, social and economic disruption, or environmental damage. [Council of The European Union - Commission Staff Working Paper - Risk Assessment and Mapping Guidelines for Disaster Management].</documentation>
@@ -102,7 +102,7 @@
     <element name="SusceptibilityArea" substitutionGroup="nz-susceptibility:AbstractSusceptibilityArea" type="nz-susceptibility:SusceptibilityAreaType">
       <annotation>
         <documentation>-- Definition --
-  Discrete spatial objects representing an area susceptible natural hazard.</documentation>
+Discrete spatial objects representing an area susceptible to a sepecific natural hazard.</documentation>
       </annotation>
     </element>
     <complexType name="SusceptibilityAreaType">
@@ -154,7 +154,7 @@
     <element name="InfluencingFactor" substitutionGroup="gml:AbstractObject" type="nz-susceptibility:InfluencingFactorType">
       <annotation>
         <documentation>-- Definition --
-  Placeholder.</documentation>
+Influencing Factors are Quantitative or Qualitative values representing the intrinsic, preparatory, variables which make an area susceptible to a hazard.</documentation>
       </annotation>
     </element>
     <complexType name="InfluencingFactorType">
@@ -162,7 +162,7 @@
         <element maxOccurs="unbounded" name="QualitativeInfluencingFactor" nillable="true">
           <annotation>
             <documentation>-- Definition --
-  Placeholder.</documentation>
+Qualitative values representing the intrinsic, preparatory, variables which make an area susceptible to a hazard.</documentation>
           </annotation>
           <complexType>
             <simpleContent>
@@ -176,7 +176,7 @@
         <element maxOccurs="unbounded" name="QuantitativeInfluencingFactor" nillable="true">
           <annotation>
             <documentation>-- Definition --
-  Placeholder.</documentation>
+Quantitative values representing the intrinsic, preparatory, variables which make an area susceptible to a hazard.</documentation>
           </annotation>
           <complexType>
             <simpleContent>
@@ -198,7 +198,7 @@
     <element name="RelativeSpatialLikelihoodofOccurence" substitutionGroup="gml:AbstractObject" type="nz-susceptibility:RelativeSpatialLikelihoodofOccurenceType">
       <annotation>
         <documentation>-- Definition --
-          Placeholder.</documentation>
+Relative Spatial Likelihood of Occurrence are Qualitative or Quantitative values, representing the spatial probability of occurrence of a specific hazard type, given the Influencing Factors present in the area.</documentation>
       </annotation>
     </element>
     <complexType name="RelativeSpatialLikelihoodofOccurenceType">
@@ -206,7 +206,7 @@
         <element name="QualitativeSpatialLikelihood" nillable="true">
           <annotation>
             <documentation>-- Definition --
-  Placeholder.</documentation>
+Qualitative values, representing the spatial probability of occurrence of a specific hazard type.</documentation>
           </annotation>
           <complexType>
             <simpleContent>
@@ -220,7 +220,7 @@
         <element name="QuantitativeSpatialLikelihood" nillable="true">
           <annotation>
             <documentation>-- Definition --
-  Placeholder.</documentation>
+Quantitative values, representing the spatial probability of occurrence of a specific hazard type.</documentation>
           </annotation>
           <complexType>
             <simpleContent>
