@@ -212,7 +212,6 @@ Qualitative values, representing the spatial probability of occurrence of a spec
             <simpleContent>
               <extension base="string">
                 <attribute name="nilReason" type="gml:NilReasonType"/>
-                <attribute name="type" type="string"/>
               </extension>
             </simpleContent>
           </complexType>
@@ -226,7 +225,6 @@ Quantitative values, representing the spatial probability of occurrence of a spe
             <simpleContent>
               <extension base="gml:MeasureType">
                 <attribute name="nilReason" type="gml:NilReasonType"/>
-                <attribute name="type" type="string"/>
               </extension>
             </simpleContent>
           </complexType>
