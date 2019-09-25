@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3" xmlns:base2="http://inspire.ec.europa.eu/schemas/base2/2.0" xmlns:ef="http://inspire.ec.europa.eu/schemas/ef/4.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:nz-core="http://inspire.ec.europa.eu/schemas/nz-core/4.0" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" elementFormDefault="qualified" xmlns:nz-susceptibility="http://schemas.minerva.codes/NZ-susceptibility" targetNamespace="http://schemas.minerva.codes/NZ-susceptibility" version="1.0">
+  <import namespace="http://inspire.ec.europa.eu/schemas/nz-core/4.0" schemaLocation="http://inspire.ec.europa.eu/schemas/nz-core/4.0/NaturalRiskZonesCore.xsd"/>
+  <import namespace="http://inspire.ec.europa.eu/schemas/base/3.3" schemaLocation="http://inspire.ec.europa.eu/schemas/base/3.3/BaseTypes.xsd"/>
+  <import namespace="http://inspire.ec.europa.eu/schemas/base2/2.0" schemaLocation="http://inspire.ec.europa.eu/schemas/base2/2.0/BaseTypes2.xsd"/>
+  <import namespace="http://inspire.ec.europa.eu/schemas/ef/4.0" schemaLocation="http://inspire.ec.europa.eu/schemas/ef/4.0/EnvironmentalMonitoringFacilities.xsd"/>
+  <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo" schemaLocation="http://portele.de/ShapeChangeAppinfo.xsd"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.opengis.net/gmlcov/1.0" schemaLocation="http://schemas.opengis.net/gmlcov/1.0/coverage.xsd"/>
+  <!--INSPIRE XML Schema Extension  Natural Risk Zones Susceptibility Area-->
+  <!--Abstract Susceptibility Area-->
+  <element abstract="true" name="AbstractSusceptibilityArea" substitutionGroup="gml:AbstractFeature" type="nz-susceptibility:AbstractSusceptibilityAreaType">
+      <annotation>
+        <documentation>-- Definition --
+  An area susceptible to a specific natural hazard.
+  
+  -- Description --
+  A natural hazard is a natural process or phenomenon that may cause loss of life, injury or other impacts, property damage, loss livelihoods and services, social and economic disruption, or environmental damage. [Council of The European Union - Commission Staff Working Paper - Risk Assessment and Mapping Guidelines for Disaster Management].</documentation>
+      </annotation>
+    </element>
+    <complexType abstract="true" name="AbstractSusceptibilityAreaType">
+      <complexContent>
+        <extension base="gml:AbstractFeatureType">
+          <sequence>
+            <element name="beginLifeSpanVersion" nillable="true">
+              <annotation>
+                <documentation>-- Definition --
+  Date and time at which this version of the spatial object was inserted or changed in the spatial data set.</documentation>
+              </annotation>
+              <complexType>
+                <simpleContent>
+                  <extension base="dateTime">
+                    <attribute name="nilReason" type="gml:NilReasonType"/>
+                  </extension>
+                </simpleContent>
+              </complexType>
+            </element>
+            <element name="determinationMethod" type="nz-core:DeterminationMethodValueType">
+              <annotation>
+                <documentation>-- Definition --
+  Specifies if the hazard area result is delineated after modelling or determined after interpretation.</documentation>
+              </annotation>
+            </element>
+            <element minOccurs="0" name="endLifeSpanVersion" nillable="true">
+              <annotation>
+                <documentation>-- Definition --
+  Date and time at which this version of the spatial object was superseded or retired in the spatial data set.</documentation>
+              </annotation>
+              <complexType>
+                <simpleContent>
+                  <extension base="dateTime">
+                    <attribute name="nilReason" type="gml:NilReasonType"/>
+                  </extension>
+                </simpleContent>
+              </complexType>
+            </element>
+            <element name="inspireId" type="base:IdentifierPropertyType">
+              <annotation>
+                <documentation>-- Definition --
+  External object identifier of the hazard area.</documentation>
+              </annotation>
+            </element>
+            <element name="typeOfHazard" type="nz-core:NaturalHazardClassificationPropertyType">
+              <annotation>
+                <documentation>-- Definition --
+  A generic classification and a specific classification of the type of natural hazard.</documentation>
+              </annotation>
+            </element>
+            <element minOccurs="0" name="validityPeriod" nillable="true" type="gml:TimePeriodPropertyType">
+              <annotation>
+                <documentation>-- Definition --
+  Future finite time frame where the hazard applies.
+  
+  -- Description --
+  It is an interval of dates, or the expression of a time frame for which the estimates are meant (eg: until 2090; summer of 2011; winter seasons until 2015).</documentation>
+              </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="source" nillable="true">
+              <annotation>
+                <documentation>-- Definition --
+  The observed event that triggered the modelling of a hazard area.</documentation>
+              </annotation>
+              <complexType>
+                <sequence minOccurs="0">
+                  <element ref="nz-core:AbstractObservedEvent"/>
+                </sequence>
+                <attributeGroup ref="gml:AssociationAttributeGroup"/>
+                <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+              </complexType>
+            </element>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+    <complexType name="AbstractSusceptibilityAreaPropertyType">
+      <sequence minOccurs="0">
+        <element ref="nz-susceptibility:AbstractSusceptibilityArea"/>
+      </sequence>
+      <attributeGroup ref="gml:AssociationAttributeGroup"/>
+      <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType>
+  <!--Susceptibility Area-->
+    <element name="SusceptibilityArea" substitutionGroup="nz-susceptibility:AbstractSusceptibilityArea" type="nz-susceptibility:SusceptibilityAreaType">
+      <annotation>
+        <documentation>-- Definition --
+Discrete spatial objects representing an area susceptible to a sepecific natural hazard.</documentation>
+      </annotation>
+    </element>
+    <complexType name="SusceptibilityAreaType">
+      <complexContent>
+        <extension base="nz-susceptibility:AbstractSusceptibilityAreaType">
+          <sequence>
+            <element name="geometry" type="gml:SurfacePropertyType">
+              <annotation>
+                <documentation>-- Definition --
+  Geometric representation of spatial extent covered by the susceptibility area.</documentation>
+              </annotation>
+            </element>
+            <element name="influencingFactor" nillable="true">
+              <annotation>
+                <documentation>-- Definition --
+  Known Conditions of the area which influence the hazard susceptibility of the area.</documentation>
+              </annotation>
+              <complexType>
+                <sequence>
+                  <element ref="nz-susceptibility:InfluencingFactor"/>
+                </sequence>
+                <attribute name="nilReason" type="gml:NilReasonType"/>
+              </complexType>
+            </element>
+            <element name="relativeSpatialLikelihoodOfOccurence" nillable="true">
+              <annotation>
+                <documentation>-- Definition --
+  Known conditions of the area which influence the hazard susceptibility of the area.</documentation>
+              </annotation>
+              <complexType>
+                <sequence>
+                  <element ref="nz-susceptibility:RelativeSpatialLikelihoodofOccurence"/>
+                </sequence>
+                <attribute name="nilReason" type="gml:NilReasonType"/>
+              </complexType>
+            </element>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+    <complexType name="SusceptibilityAreaPropertyType">
+      <sequence minOccurs="0">
+        <element ref="nz-susceptibility:SusceptibilityArea"/>
+      </sequence>
+      <attributeGroup ref="gml:AssociationAttributeGroup"/>
+      <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType>
+  <!--Influencing Factor-->
+    <element name="InfluencingFactor" substitutionGroup="gml:AbstractObject" type="nz-susceptibility:InfluencingFactorType">
+      <annotation>
+        <documentation>-- Definition --
+Influencing Factors are Quantitative or Qualitative values representing the intrinsic, preparatory, variables which make an area susceptible to a hazard.</documentation>
+      </annotation>
+    </element>
+    <complexType name="InfluencingFactorType">
+      <sequence>
+        <element maxOccurs="unbounded" name="QualitativeInfluencingFactor" nillable="true">
+          <annotation>
+            <documentation>-- Definition --
+Qualitative values representing the intrinsic, preparatory, variables which make an area susceptible to a hazard.</documentation>
+          </annotation>
+          <complexType>
+            <simpleContent>
+              <extension base="string">
+                <attribute name="nilReason" type="gml:NilReasonType"/>
+                <attribute name="type" type="string"/>
+              </extension>
+            </simpleContent>
+          </complexType>
+        </element>
+        <element maxOccurs="unbounded" name="QuantitativeInfluencingFactor" nillable="true">
+          <annotation>
+            <documentation>-- Definition --
+Quantitative values representing the intrinsic, preparatory, variables which make an area susceptible to a hazard.</documentation>
+          </annotation>
+          <complexType>
+            <simpleContent>
+              <extension base="gml:MeasureType">
+                <attribute name="nilReason" type="gml:NilReasonType"/>
+                <attribute name="type" type="string"/>
+              </extension>
+            </simpleContent>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+    <complexType name="InfluencingFactorPropertyType">
+      <sequence>
+        <element ref="nz-susceptibility:InfluencingFactor"/>
+      </sequence>
+    </complexType>
+  <!--Relative Spatial Likelihood of Occurence-->
+    <element name="RelativeSpatialLikelihoodofOccurence" substitutionGroup="gml:AbstractObject" type="nz-susceptibility:RelativeSpatialLikelihoodofOccurenceType">
+      <annotation>
+        <documentation>-- Definition --
+Relative Spatial Likelihood of Occurrence are Qualitative or Quantitative values, representing the spatial probability of occurrence of a specific hazard type, given the Influencing Factors present in the area.</documentation>
+      </annotation>
+    </element>
+    <complexType name="RelativeSpatialLikelihoodofOccurenceType">
+      <sequence>
+        <element name="QualitativeSpatialLikelihood" nillable="true">
+          <annotation>
+            <documentation>-- Definition --
+Qualitative values, representing the spatial probability of occurrence of a specific hazard type.</documentation>
+          </annotation>
+          <complexType>
+            <simpleContent>
+              <extension base="string">
+                <attribute name="nilReason" type="gml:NilReasonType"/>
+                <attribute name="type" type="string"/>
+              </extension>
+            </simpleContent>
+          </complexType>
+        </element>
+        <element name="QuantitativeSpatialLikelihood" nillable="true">
+          <annotation>
+            <documentation>-- Definition --
+Quantitative values, representing the spatial probability of occurrence of a specific hazard type.</documentation>
+          </annotation>
+          <complexType>
+            <simpleContent>
+              <extension base="gml:MeasureType">
+                <attribute name="nilReason" type="gml:NilReasonType"/>
+                <attribute name="type" type="string"/>
+              </extension>
+            </simpleContent>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+    <complexType name="RelativeSpatialLikelihoodofOccurencePropertyType">
+      <sequence>
+        <element ref="nz-susceptibility:RelativeSpatialLikelihoodofOccurence"/>
+      </sequence>
+    </complexType>
+  </schema>
