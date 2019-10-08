@@ -9,7 +9,7 @@ The Susceptibility Area feature type schema is modeled following the structure o
 
 ## Useful Links 
 
-For landslide susceptibility mapping applications we suggest using the INSPIRE codelist extension [Natural Hazard Category Varnes Landslide Extension](http://minerva.codes/codelist/NaturalHazardCategoryValue) for describing *typeOfHazard* schema Element
+For landslide susceptibility mapping applications we suggest using the INSPIRE codelist extension [Natural Hazard Category Varnes Landslide Extension](http://minerva.codes/codelist/NaturalHazardCategoryLandslideExtension) for describing *typeOfHazard* schema Element
 
 A practical example of the application of The Susceptibility Area Natural Risk Zone schema extension is this [Veneto Landslide Susceptibility Map](https://map.italy.minervageohazards.com/)
 
