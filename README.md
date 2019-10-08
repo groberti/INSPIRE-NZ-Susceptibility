@@ -17,4 +17,4 @@ A practical example of the application of The Susceptibility Area Natural Risk Z
 This schema extension can be used with ETL tools to align hazard susceptibily maps and databases. The XSD schema has been tested with [Hale Studio](https://www.wetransform.to/products/halestudio/). When importing this as a target schema in hale studio it is recommended to edit mappable types such that the Natural Risk Zone core schema is also available. 
 
 ## Acknowledgments
-This schema extension has been developed by [Minerva Intelligence Inc.] (https://www.minervaintelligence.com/) as a part of the INSPIRE Helsinki 2019 Data Challenge. git 
+This schema extension has been developed by [Minerva Intelligence Inc] (https://www.minervaintelligence.com/) as a part of the INSPIRE Helsinki 2019 Data Challenge. git 
